@@ -4,7 +4,7 @@
   date_default_timezone_set('Asia/Kolkata');
   try{
     $host_name='localhost';
-    $db_name='log';
+    $db_name='login';
     $user='team';
     $pass='adapt';
     $pdo = new PDO("mysql:host=".$host_name.";dbname=".$db_name,$user,$pass);
