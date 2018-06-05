@@ -98,19 +98,19 @@
   	<form method="post" action="index.php" enctype="multipart/form-data" style="padding-top:20px">
           <div class="form-group">
             <label for="tname">Team Name: </label>
-  	    <input type="text" name="tname" class="form-control" id="tname" required="required">
+  	    <input type="text" name="tname" pattern="[a-zA-Z0-9]+" class="form-control" id="tname" required="required">
           </div>
           <div class="form-group">
             <label for="hname">Name (Team Head) </label>
-      	    <input type="text" name="hname" class="form-control" id="hname" required="required">
+      	    <input type="text" name="hname" pattern="[a-zA-Z0-9]+" class="form-control" id="hname" required="required">
           </div>
           <div class="form-group">
             <label for="regno">Registration no: </label>
-            <input type="text" name="regno" class="form-control" id="regno" required="required">
+            <input type="number" name="regno" class="form-control" id="regno" required="required">
           </div>
           <div class="form-group">
   	    <label for="brnch">Branch/Specialization: </label>
-  	    <input type="text" name="brnch" class="form-control" id="brnch" required="required">
+  	    <input type="text" name="brnch" pattern="[a-zA-Z]+" class="form-control" id="brnch" required="required">
           </div>
           <div class="form-group">
   	    <label for="sem">Semester: </label>
@@ -127,7 +127,7 @@
           </div>
           <div class="form-group">
             <label for="ins">Institution: </label>
-  	    <input type="text" name="ins" class="form-control" id="ins" required="required">
+  	    <input type="text" name="ins" pattern="[a-zA-Z]+" class="form-control" id="ins" required="required">
           </div>
           <div class="form-group">
   	    <label for="pno">Phone no: </label>
