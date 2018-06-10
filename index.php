@@ -4,6 +4,9 @@
   session_start();
   date_default_timezone_set('Asia/Kolkata');
   if(isset($_POST["submit"])){
+    if(!is_dir('uploads')) {
+      mkdir('uploads');
+    }
     $directory = "uploads/";
     $file = $directory.strip_tags(basename($_FILES["uploadFile"]["name"]));
     $fileType = strtolower(end(explode(".",$_FILES["uploadFile"]["name"])));
