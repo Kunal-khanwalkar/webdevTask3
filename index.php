@@ -5,8 +5,8 @@
   date_default_timezone_set('Asia/Kolkata');
   if(isset($_POST["submit"])){
     $directory = "uploads/";
-    $file = $directory.basename($_FILES["uploadFile"]["name"]);
-    $fileType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+    $file = $directory.strip_tags(basename($_FILES["uploadFile"]["name"]));
+    $fileType = strtolower(end(explode(".",$_FILES["uploadFile"]["name"])));
     $check = filesize($_FILES["uploadFile"]["tmp_name"]);
     if($check !== false) {
       $_SESSION["message"]="File is a PDF.";
