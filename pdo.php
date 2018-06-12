@@ -12,7 +12,8 @@
   }
   catch(PDOException $err){
     echo "Connection Failed. Please contact System Admin if error persists.";
-    error_log($err->getMessage);
+    error_log($err->getMessage());
+    die();
   }
 
 ?>
