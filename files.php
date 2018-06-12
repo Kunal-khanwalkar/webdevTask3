@@ -168,6 +168,9 @@
               echo "</form>";
               echo "</td></tr>";
             }
+            if($_SESSION["count"]==0){
+              echo "Oops. There seem to be no uploaded files from the team you are looking for. Ensure you are registered, if you haven't already.";
+            }
           }
         }
       }
