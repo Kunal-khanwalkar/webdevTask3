@@ -43,7 +43,8 @@ CREATE TABLE `team_data` (
   `sem` int(11) DEFAULT NULL,
   `institution` varchar(512) DEFAULT NULL,
   `phone` bigint(20) DEFAULT NULL,
-  `email` varchar(256) DEFAULT NULL
+  `email` varchar(256) DEFAULT NULL,
+  `file_path` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
