@@ -27,6 +27,12 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `team_data`
 --
+CREATE DATABASE login;
+GRANT ALL ON login.* TO 'team'@'localhost' IDENTIFIED BY 'adapt';
+GRANT ALL ON login.* TO 'team'@'127.0.0.1' IDENTIFIED BY 'adapt';
+
+--Please ensure you remove all databases named 'login' before you import this sql file.
+--This SQL database is necessary for the database connection to be established through PHP.
 
 CREATE TABLE `team_data` (
   `team_id` int(11) NOT NULL,
@@ -37,7 +43,8 @@ CREATE TABLE `team_data` (
   `sem` int(11) DEFAULT NULL,
   `institution` varchar(512) DEFAULT NULL,
   `phone` bigint(20) DEFAULT NULL,
-  `email` varchar(256) DEFAULT NULL
+  `email` varchar(256) DEFAULT NULL,
+  `file_path` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
