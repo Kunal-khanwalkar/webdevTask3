@@ -17,23 +17,36 @@
     mkdir('uploads');
   }
   if(isset($_POST["view"])){
-    echo exec('uploads/'.$_POST["filename"]);
+    system('uploads/'.$_POST["filename"]);
     header('Location:files.php');
     return;
   }
   if(isset($_POST["download"])){
-    $filename = basename($_POST['filename']);
+    $filename = $_POST['filename'];
     $path = 'uploads/';
     $download_file =  $path.$filename;
     if(file_exists($download_file))
     {
-      header('Content-Disposition: attachment; filename=' . $filename);
+      header('Content-Description: File Transfer');
+      header('Content-Type:application/pdf');
+      header('Content-Transfer-Encoding: Binary');
+      header("Content-disposition: attachment; filename=\"".basename($filename)."\"");
+      header('Connection: Keep-Alive');
+      header('Expires: 0');
+      header('Content-Length: ' . filesize($download_file));
+      header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+      header('Pragma: public');
+      ob_clean();
+      flush();
       readfile($download_file);
+      header('Location:files.php');
       exit;
     }
     else
     {
-      echo 'File does not exists on given path';
+      $_SESSION["error"]='File does not exists on given path';
+      header('Location:files.php');
+      return;
     }
   }
   function dir_is_empty($dir) {
@@ -111,6 +124,7 @@
       }
     ?>
     </form>
+    <?php if(isset($_SESSION["error"])){echo "<p>"; echo $_SESSION["error"];unset($_SESSION["error"]); echo "</p>";} ?>
     <?php
 
       $dir="uploads";
@@ -122,7 +136,7 @@
           if($value!='.'&&$value!='..'){
             echo "<tr>";
             echo "<td>";
-            echo $value;
+            echo basename($value,'.pdf');
             echo "</td>";
             echo "<td>";
             echo "<form action='files.php' method='post'>";
@@ -148,7 +162,7 @@
               ':p'=>'%'.$_SESSION["sfile"].'%'
             ));
             while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-              $sfile=substr($row['file_path'],8);
+              $sfile=basename($row['file_path']);
               if($_SESSION["count"]==0){
                 echo "<table class='table table-hover'>";
                 echo "<tr><th class='tog'>Files</th><th>File Name</th><th>Team</th><th>Actions</th></tr>";
@@ -156,7 +170,7 @@
               }
               echo "<tr>";
               echo "<td>";
-              echo $sfile;
+              echo basename($sfile,'.pdf');
               echo "</td>";
               echo "<td>".$row['team_name']."</td>";
               echo "<td>";
