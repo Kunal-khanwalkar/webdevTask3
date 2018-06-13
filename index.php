@@ -78,6 +78,7 @@
   }
 
 ?>
+<<<<<<< HEAD
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -96,6 +97,23 @@
         .container{
           width: 100%;
           margin-top:16%;
+=======
+<html>	
+    <head>
+        <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TechTatva '18 | Login Form</title>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            .container-fluid{
+                width: 75%;
+            }
+            @media(max-width:560px){
+              .container-fluid{
+              width: 100%;
+            }
+>>>>>>> Kunal
         }
         .container-fluid{
           width:100%;
