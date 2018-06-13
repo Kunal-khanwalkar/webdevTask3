@@ -78,6 +78,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TechTatva '18 | Login Form</title>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
         <style>
             .container-fluid{
                 width: 75%;
