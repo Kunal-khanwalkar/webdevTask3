@@ -20,6 +20,7 @@
   <head>
     <title>Successful Registration</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div class="container-fluid" style="margin-top:3%">
