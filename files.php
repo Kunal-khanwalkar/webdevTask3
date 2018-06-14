@@ -83,7 +83,7 @@
           display:none;
         }
       }
-      @media(max-width:560px){
+      @media(max-width:650px){
         .container,.container-fluid{
           width:100%;
         }
