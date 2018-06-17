@@ -13,7 +13,9 @@
     return;
   }
   if(isset($_POST["view"])){
-    echo exec('uploads/'.$_SESSION["filename"]);
+    system('uploads/'.$_SESSION["filename"]);
+    header('Location:successful.php?name='.$_GET['name']);
+    return;
   }
  ?>
 <html>
